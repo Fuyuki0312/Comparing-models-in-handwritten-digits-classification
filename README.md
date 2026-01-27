@@ -22,7 +22,16 @@ Image classification using Convolutional Neural Network, demonstrating inference
 
 ## Inference
 - You may use: images from Kaggle Single Handwritten Number Digit dataset or any custom single-handwritten-number images.
-- Note: Input images are converted to grayscale and resized before inference.
+- Note: Input images are converted to grayscale and resized before inference and their background color should be white.
+
+
+## Limitation
+- Model usually gives right predictions only when the background color of input images is white because this model was trained primarily on numerical images with white backgrounds.
+
+
+## Possible Improvements
+- Expanding the dataset to include numerical images with diverse backgrounds (dark, textured, etc).
+- Applying background-related data augmentation techniques during training.
 
 
 ## Others
