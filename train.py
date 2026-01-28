@@ -3,6 +3,7 @@ import torch
 from torch import nn
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
+from torch.utils.data import random_split
 import math
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -11,7 +12,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 
 TRANING_CYCLES = 5
 BATCH_SIZE = 128
-NUMBER_OF_TRAINING_IMAGES = 20000 # This is a placeholder. Please enter the number of images in your dataset here
+TEST_AFTER_n_EPOCH = 1
 MODEL_ADDRESS = "ModelDetectingNumber.pth"
 torch.manual_seed(42)
 
@@ -25,15 +26,31 @@ transform = transforms.Compose([
                          std=(0.353,))
 ])
 
-train_data = datasets.ImageFolder(
+full_data = datasets.ImageFolder(
     root="numbers",
     transform=transform
 )
 
+train_size = int(0.8 * len(full_data))
+test_size = len(full_data) - train_size
+
+train_data, test_data = random_split(
+    full_data,
+    [train_size, test_size]
+)
+
 train_dataloader = DataLoader(
-    dataset= train_data,
+    dataset=train_data,
     batch_size=BATCH_SIZE,
     shuffle=True,
+    pin_memory=True,
+    num_workers=4
+)
+
+test_dataloader = DataLoader(
+    dataset=test_data,
+    batch_size=BATCH_SIZE,
+    shuffle=False,
     pin_memory=True,
     num_workers=4
 )
@@ -54,7 +71,7 @@ def main():
     )
 
     try:
-        checkpoint = torch.load(f=MODEL_ADDRESS, weights_only=True, map_location=device)
+        checkpoint = torch.load(f=MODEL_ADDRESS, map_location=device)
         God_of_Number.load_state_dict(checkpoint["model_state_dict"])
         optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
         scheduler.load_state_dict(checkpoint["scheduler_state_dict"])
@@ -78,11 +95,12 @@ def main():
         return acc * 100
 
     epochs = epoch + TRANING_CYCLES
-    God_of_Number.train()
+    
     for epoch in range(epoch+1, epochs+1):
         print("Processing Training Epoch " + str(epoch) + "/" + str(TRANING_CYCLES) + "...")
         sum_loss, sum_acc = 0, 0
-
+        
+        God_of_Number.train()
         for images, labels in train_dataloader:
             images, labels = images.to(device), labels.to(device)
 
@@ -106,7 +124,28 @@ def main():
         acc = (sum_acc) / num_batches
         scheduler.step(loss)
 
-        print(f"Epoch: {epoch} | Loss: {loss:.6f} | Accuracy: {acc:.2f}%")
+        if epoch % TEST_AFTER_n_EPOCH == 0:
+            test_sum_loss, test_sum_acc = 0, 0
+            
+            God_of_Number.eval()
+            for images, labels in test_dataloader:
+                images, labels = images.to(device), labels.to(device)
+                with torch.inference_mode():
+                    test_pred_logits = God_of_Number(images)
+                test_pred_prob = torch.softmax(test_pred_logits, dim=1)
+                
+                test_batch_loss = loss_func(test_pred_logits, labels)
+                test_batch_acc = accuracy_func(pred=test_pred_prob, true=labels)
+
+                test_sum_loss += test_batch_loss
+                test_sum_acc += test_batch_acc
+
+            test_num_batches = len(test_dataloader)
+            test_loss = (test_sum_loss) / test_num_batches
+            test_acc = (test_sum_acc) / test_num_batches
+
+            print(f"Epoch: {epoch} | Loss: {loss:.6f} | Accuracy: {acc:.2f}%")
+            print(f"                 Test loss: {test_loss} | Test accuracy: {test_acc}")
 
     # Save model ---------------------------------------------------------------------
 
@@ -119,5 +158,5 @@ def main():
     print(f"Model has been saved successfully as {MODEL_ADDRESS}")
 
 if __name__ == "__main__":
-
     main()
+
