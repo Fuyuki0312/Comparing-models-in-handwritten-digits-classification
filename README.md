@@ -16,9 +16,9 @@ Numerical image classification using Convolutional Neural Network, illustrating 
 
 
 ## How to use this model
-- If you wish to continue to train the existing model, consider to run the train.py with both ModelDetectingNumber.pth and model.py in the same directory. Hyperparameters in train.py can be changed to adapt your need. Besides, if you wish to train a completely new model, simply delete or move file ModelDetectingNumber.pth away. When ModelDetectingNumber.pth is not found, train.py will automatically initialize a new model with architecture based on model.py.
-- The dataset, used for training, should be put in the same directory with train.py under a folder named "numbers", with the following structure:  
-numbers/  
+- If you wish to continue to train the existing model, consider to run the `train.py` with both `ModelDetectingNumber.pth` and `model.py` in the same directory. Hyperparameters in `train.py` can be changed to suit your need. Besides, if you wish to train a completely new model, simply delete or move file `ModelDetectingNumber.pth` away. When `ModelDetectingNumber.pth` is not found, `train.py` will automatically initialize a new model with architecture based on `model.py`.
+- The dataset, used for training, should be put in the same directory with `train.py` under a folder named `numbers`, with the following structure:  
+`numbers`/  
 ├── 0/  
 │   ├── img1.png  
 │   ├── img2.png  
@@ -34,7 +34,7 @@ numbers/
 ├── 7/  
 ├── 8/  
 └── 9/  
-- Besides, if you only wish to use the model for inference, you can import model from model.py with weights loaded from ModelDetectingNumber.pth
+- Besides, if you only wish to use the model for inference, you can import model from `model.py` with weights loaded from `ModelDetectingNumber.pth`.
 
 ## Limitation
 - Model usually gives right predictions only when the background color of input images is white because this model was trained primarily on numerical images with white backgrounds.
