@@ -17,14 +17,13 @@ Numerical image classification using Convolutional Neural Network, illustrating 
 
 ## How to use this model
 - If you wish to continue to train the model which was already trained by me, you may consider to run the file train.py with file ModelDetectingNumber.pth and file model.py being in the same address. Besides, if you wish to implement a completely new model, you only need delete or move file ModelDetectingNumber.pth away.
-├── 0/
-│   ├── img1.png
-│   ├── img2.png
+├── 0/  
+│   ├── img1.png  
+│   ├── img2.png  
 │   └── ...
 ├── 1/
 │   ├── img1.png
 │   └── ...
-│
 ├── 2/
 ├── 3/
 ├── 4/
