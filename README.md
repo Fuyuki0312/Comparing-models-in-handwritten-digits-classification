@@ -16,7 +16,7 @@ Numerical image classification using Convolutional Neural Network, illustrating 
 
 
 ## How to use this model
-- If you wish to continue to train the existing model, consider to run the train.py with both ModelDetectingNumber.pth and model.py in the same directory. Besides, if you wish to train a completely new model, simply delete or move file ModelDetectingNumber.pth away. When ModelDetectingNumber.pth is not found, train.py will automatically initialize a new model with architecture based on model.py.
+- If you wish to continue to train the existing model, consider to run the train.py with both ModelDetectingNumber.pth and model.py in the same directory. Hyperparameters in train.py can be changed to adapt your need. Besides, if you wish to train a completely new model, simply delete or move file ModelDetectingNumber.pth away. When ModelDetectingNumber.pth is not found, train.py will automatically initialize a new model with architecture based on model.py.
 - The dataset, used for training, should be put in the same directory with train.py under a folder named "numbers", with the following structure:  
 numbers/  
 ├── 0/  
