@@ -15,8 +15,9 @@ Numerical image classification using Convolutional Neural Network, illustrating 
 ![description](Images/ModelDemonstration.jpg)
 
 ## Metrics
-![description](Images/LossCurve.jpg) ![description](Images/AccuracyCurve.jpg)
 - Model reached approximately 93% accuracy on a custom dataset.
+
+![description](Images/LossCurve.jpg) ![description](Images/AccuracyCurve.jpg)
 ![description](Images/ConfusionMatrix.jpg)
 
 ## How to use this model
