@@ -8,6 +8,14 @@ Numerical image classification using Convolutional Neural Network, illustrating 
 - Challenges: Building a CNN model from scratch, training the model and implementing an interactive demonstration
 
 
+## Why choosing CNN
+CNN models are a strong baseline in image classification because of their ability to learn local spacial features effectively, and perform sufficiently even with a small dataset.  
+
+In contrast, Vision Transformer (ViT) models, while outperform CNN models thanks to global dependencies, require significantly more data and computational resources to train effectively.  
+
+Given the limited size of the dataset in this project, CNN is a more suitable and practical choice.  
+
+
 ## Demonstration
 - A demonstration of the model is produced at HuggingFace Space: https://huggingface.co/spaces/Fuyuki0312/ModelDetectingNumber-demo
 - You may need to restart the space in order to use the model.
