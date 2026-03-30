@@ -32,6 +32,28 @@ Given the limited size of the dataset in this project, CNN is a more suitable an
 - The model sometimes confuses digits like 0, 3, 6, 8, and 9 because they share similar rounded shapes.
 
 
+## Dataset  
+
+This project uses a custom dataset of handwritten digits (0–9).  
+The original dataset: https://www.kaggle.com/datasets/olafkrastovski/handwritten-digits-0-9  
+
+### Data Cleaning  
+
+The dataset was manually inspected and cleaned to improve quality:  
+
+- Removed corrupted images or ones that can be hardly seen
+- Filtered out images where digits were not clearly visible
+
+### Data Characteristics
+- Image size: 90×140 (turned into grayscale afterward)
+- Includes variations in handwriting styles and stroke thickness
+- There is a number of digits which are not centered and have various size
+- Some digits are visually similar (e.g., 0, 6, 8, 9), which introduces ambiguity
+
+### Data Augmentation  
+Heavy transformations (e.g., random rotation, large scaling) were avoided to preserve digit structure.
+
+
 ## How to use this model
 - If you wish to continue to train the existing model, consider to run the `train.py` with both `ModelDetectingNumber.pth` and `model.py` in the same directory. Hyperparameters in files can be changed to suit your need. Besides, if you wish to train a completely new model, simply delete or move file `ModelDetectingNumber.pth` away. When `ModelDetectingNumber.pth` is not found, `train.py` will automatically initialize a new model with architecture based on `model.py`.
 - The dataset, used for training, should be put in the same directory with `train.py` under a folder named `numbers`, with the following structure:  
