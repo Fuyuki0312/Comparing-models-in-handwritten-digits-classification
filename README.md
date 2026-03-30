@@ -26,8 +26,8 @@ Given the limited size of the dataset in this project, CNN is a more suitable an
 ## Metrics
 - Model reached approximately 93% accuracy on a custom dataset.
 
-![description](Images/AccuracyCurve.jpg) ![description](Images/LossCurve.jpg)
-![description](Images/ConfusionMatrix.jpg)
+![description](Images/CNNAccuracyCurve.jpg) ![description](Images/CNNLossCurve.jpg)
+![description](Images/CNNConfusionMatrix.jpg)
 (Confusion matrix collected model's prediction during validation after finishing training)
 - The model sometimes confuses digits like 0, 3, 6, 8, and 9 because they share similar rounded shapes.
 
