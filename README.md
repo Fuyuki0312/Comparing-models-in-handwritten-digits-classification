@@ -58,6 +58,7 @@ Note: The ResNet18 model with a frozen backbone as well as the relating graphs s
 
 This project uses a custom dataset of handwritten digits (0–9).  
 The original dataset: https://www.kaggle.com/datasets/olafkrastovski/handwritten-digits-0-9  
+Total images: approximately 20000 images with each label has about 2000 images  
 
 ### Data Cleaning  
 
