@@ -74,12 +74,12 @@ The dataset was manually inspected and cleaned to improve quality:
 - Some digits are visually similar (e.g., 0, 6, 8, 9), which introduces ambiguity
 
 ### Data Augmentation  
-Heavy transformations (e.g., random rotation, large scaling) were avoided to preserve digit structure.  
+Heavy transformations (e.g., random rotation, large scaling) were avoided to preserve digit structure. However, some transformations are available in `train.py` in commentary form, meaning that they can be enabled by deleting sharp symbols "#". For more detailed, you can take a further look at `train.py`.
 
 
 ## How to use the models
 Note: before following the instruction below, you may want to go to folder `CNN model from scratch` or `ResNet18` first.
-- If you wish to continue to train the existing models, consider to run the `train.py` with both `ModelDetectingNumber.pth` and `model.py` in the same directory. Hyperparameters in files can be changed to suit your need. Besides, if you wish to train a completely new model, simply delete or move file `ModelDetectingNumber.pth` away. When `ModelDetectingNumber.pth` is not found, `train.py` will automatically initialize a new model based on `model.py`.
+- To continue to train the existing models, consider to run `train.py` with both `ModelDetectingNumber.pth` and `model.py` in the same directory. Hyperparameters in files can be changed to suit your need. Besides, if you wish to train a completely new model, simply delete or move file `ModelDetectingNumber.pth` away. When `ModelDetectingNumber.pth` is not found, `train.py` will automatically initialize a new model based on `model.py`.
 - The dataset, used for training, should be put in the same directory with `train.py` under a folder named `numbers`, with the following structure:  
 `numbers`/  
 ├── 0/  
@@ -97,8 +97,8 @@ Note: before following the instruction below, you may want to go to folder `CNN 
 ├── 7/  
 ├── 8/  
 └── 9/  
-- If you only want to use the models for inference, you can import model from `model.py` with weights loaded from `ModelDetectingNumber.pth`.
-- Beisdes, `PlotConfusionMatrix.py` can be used to plot confusion matrix for current model with weights loaded from `ModelDetectingNumber.pth`.  
+- If you want to use the models only for inference, you can import the models from `model.py` with weights loaded from `ModelDetectingNumber.pth`.
+- Beisdes, `PlotConfusionMatrix.py` can be used to plot confusion matrix for the current model with weights loaded from `ModelDetectingNumber.pth`.  
 
 ## Limitation
 - The models usually give right predictions only when the background color of input images is white because the models were trained primarily on numerical images with white backgrounds.
@@ -106,5 +106,5 @@ Note: before following the instruction below, you may want to go to folder `CNN 
 
 
 ## Possible Improvements
-- Expanding the dataset to include numerical images with diverse backgrounds (dark, textured, etc) might be a solution to enable models to predict images with black background and white digit.
+- Expanding the dataset to include numerical images with diverse backgrounds (dark, textured, etc) might be a solution to enable models to predict images with black background and white digits.
 - Since some digits have more than one handwritting style, adding more numerical images written in a wider range of styles to the dataset can help models become more familiar with human-like digits.
