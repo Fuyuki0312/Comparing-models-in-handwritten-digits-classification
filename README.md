@@ -17,8 +17,8 @@ Given the limited size of the dataset in this project, CNN is considered a more 
 
 
 ## Demonstration
-- A demonstration of ResNet18 is produced at HuggingFace Space: https://huggingface.co/spaces/Fuyuki0312/ResNet18-in-handwritten-digit-classification
-- Or for the CNN model from scratch: https://huggingface.co/spaces/Fuyuki0312/CNN-model-built-from-scratch
+- A demonstration of the CNN model from scratch is produced at HuggingFace Space: https://huggingface.co/spaces/Fuyuki0312/CNN-model-built-from-scratch
+- Or for the ResNet18 model: https://huggingface.co/spaces/Fuyuki0312/ResNet18-in-handwritten-digit-classification
 - The Space may need a few seconds to initialize if inactive. 
 - Note: Input images are grayscale and their background color should be white by default.  
 ![description](Images/ModelDemonstration.jpg)  
