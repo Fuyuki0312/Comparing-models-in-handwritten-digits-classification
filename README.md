@@ -47,7 +47,7 @@ Given the limited size of the dataset in this project, CNN is considered a more 
 ![description](Images/ComparingTable.jpg)
 
 - Thanks to being pretrained on large-scale datasets, the ResNet18 model required much fewer epochs (only 3) to train, despite taking insignificantly more time to train each epoch, which was 0.67 min/epoch. This model resulted in a considerably high test accuracy, being approximately higher than 99%, without the need of transforming data into grayscale.
-- The CNN model built from scratch, on the other hand, reached an acceptable test accuracy, yet demanded many times more epochs (50 epochs), leading to longer training time. After data had been transformed into grayscale, this model was trained with a speed of roughly 0.4 min/epoch, achieving about 94% test accuracy.
+- The CNN model built from scratch, on the other hand, reached an acceptable test accuracy (94.14%), yet demanded many times more epochs (50 epochs), leading to longer training time. After data had been transformed into grayscale, this model was trained with a speed of roughly 0.4 min/epoch, achieving about 94% test accuracy.
 - A ResNet18 model with frozen backbone is not recommended because ~81% test accuracy cannot be considered satisfactory in handwritten digit classification. The model's backbone being frozen limited the model's ability to adapt the dataset, reducing the model's capability of understanding data's patterns.
 - Overall, the ResNet18 model outperforms the custom CNN model with noticeably less total time to train in this project, although ResNet18 model requires slightly more computational resoures.  
 
