@@ -100,6 +100,8 @@ Some heavy transformations (e.g., random rotation, large scaling) were avoided t
 
 ## 6. How to use the models
 Note: before following the instruction below, you may want to go to folder `CNN model from scratch` or `ResNet18` or others first.
+
+### 6.1. Training
 - To continue to train the existing models, consider to run `train.py`. Hyperparameters in files can be changed to suit your need. Besides, if you wish to train a completely new model, simply delete or move file `ModelDetectingNumber.pth` away. When `ModelDetectingNumber.pth` is not found, `train.py` will automatically initialize a new model based on `model.py`.
 - The dataset, used for training, should be put in the same directory with `train.py` under a folder named `numbers`, with the following structure:  
 `numbers`/  
@@ -117,9 +119,11 @@ Note: before following the instruction below, you may want to go to folder `CNN 
 ├── 6/  
 ├── 7/  
 ├── 8/  
-└── 9/  
+└── 9/
+
+### 6.2. Inference
 - If you want to use the models only for inference, you can import the models from `model.py` (and also `self_attention.py` for CNNtention) with weights loaded from `ModelDetectingNumber.pth`.
-- Besides, `PlotConfusionMatrix.py` can be used to plot confusion matrix for the current model with weights loaded from `ModelDetectingNumber.pth`.  
+- Besides, `PlotConfusionMatrix.py` can be used to plot confusion matrix for the current model with weights loaded from `ModelDetectingNumber.pth` on the dataset.  
 
 
 ## 7. Limitation and Possible Improvements
