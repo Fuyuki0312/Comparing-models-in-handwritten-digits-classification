@@ -5,14 +5,14 @@ A comparative study of attention-augmented CNN (CNNtention) and ResNet18 for han
 ## 1. Overview
 - Task: Comparing a CNNtention model with ResNet18 models and with other models in handwritten digit classification (from 0 to 9)
 - Model: Convolutional Neural Network (CNN)
-- Mechanism: Transformer Attention  
+- Mechanism: Transformer Self-attention  
 
 
 ## 2. Background
 
 ### 2.1. Inspiration
 This project is inspired by the paper **"CNNtention: Can CNNs do better with Attention?"** (Glattki, Kapila & Rathi, 2024) [[arXiv:2412.11657](https://arxiv.org/html/2412.11657v1)].  
-I adapt their approach of integrating attention mechanisms into CNN architectures for the task of handwritten digit classification on a custom dataset.  
+I adapt their approach of integrating self-attention mechanisms into CNN architectures for the task of handwritten digit classification on a custom dataset.  
 
 ### 2.2. Why choosing CNN
 CNN models are a strong baseline in image classification because of their ability to learn local spacial features effectively, and perform sufficiently even with a small dataset.  
