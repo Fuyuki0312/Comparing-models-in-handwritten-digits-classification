@@ -99,7 +99,7 @@ Some heavy transformations (e.g., random rotation, large scaling) were avoided t
 
 
 ## 6. How to use the models
-Note: before following the instruction below, you may want to go to folder `CNN model from scratch` or `ResNet18` first.
+Note: before following the instruction below, you may want to go to folder `CNN model from scratch` or `ResNet18` or others first.
 - To continue to train the existing models, consider to run `train.py`. Hyperparameters in files can be changed to suit your need. Besides, if you wish to train a completely new model, simply delete or move file `ModelDetectingNumber.pth` away. When `ModelDetectingNumber.pth` is not found, `train.py` will automatically initialize a new model based on `model.py`.
 - The dataset, used for training, should be put in the same directory with `train.py` under a folder named `numbers`, with the following structure:  
 `numbers`/  
