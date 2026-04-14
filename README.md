@@ -1,9 +1,9 @@
 # Model Comparison In Handwritten Digit Classification  
-A comparative study of attention-augmented CNN (CNNtention) and ResNet18 for handwritten digit classification with detailed evaluation and analysis.
+A comparative study of attention-augmented Convolutional Neural Network (CNNtention) and ResNet18 for handwritten digit classification with detailed evaluation and analysis.
 
 
 ## 1. Overview
-- Task: Comparing 4 models: a non-attention, a CNNtention model, a ResNet18 model from scratch, a pretrained ResNet18 model in handwritten digit classification (from 0 to 9)
+- Task: Comparing 4 models: a non-attention CNN model, a CNNtention model, a ResNet18 model from scratch and a pretrained ResNet18 model in handwritten digit classification (from 0 to 9)
 - Model: Convolutional Neural Network (CNN)
 - Mechanism: Spatial Self-Attention (inspired by Transformer)
 
