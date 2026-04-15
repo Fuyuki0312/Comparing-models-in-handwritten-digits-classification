@@ -36,7 +36,7 @@ The dataset was manually inspected and cleaned to improve quality:
 - Filtered out images where digits are not clearly visible
 
 ### 3.2. Data Characteristics
-- Image size: 90×140 (can be resized to 45x70 to reduce total training time)
+- Image size: 90×140 (can be resized to 45x70 to reduce total training time of the CNNtention model)
 - Includes variations in handwriting styles and stroke thickness
 - There is a number of digits which are not centered and have various size
 - Some digits are visually similar (e.g., 0, 6, 8, 9), which introduces ambiguity
@@ -46,7 +46,7 @@ Some heavy transformations (e.g., random rotation, large scaling) were avoided t
 
 
 ## 4. Demonstration
-- A demonstration of the CNNtention model from scratch is produced at HuggingFace Space: https://huggingface.co/spaces/Fuyuki0312/CNNtention-in-handwritten-digit-classification
+- A demonstration of the CNNtention model (45x70) from scratch is produced at HuggingFace Space: https://huggingface.co/spaces/Fuyuki0312/CNNtention-in-handwritten-digit-classification
 - Or for the ResNet18 model: https://huggingface.co/spaces/Fuyuki0312/ResNet18-in-handwritten-digit-classification
 - The Space may need a few seconds to restart if inactive. 
 - Note: Input image's background color should be white by default.  
