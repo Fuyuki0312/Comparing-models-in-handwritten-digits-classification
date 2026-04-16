@@ -66,14 +66,16 @@ Some heavy transformations (e.g., random rotation, large scaling) were avoided t
 ### 5.2. CNNtention
 
 #### 5.2.1. CNNtention on images of 90x140 size (original size)
+- This CNNtention model was built based on the non-attention CNN model's architecture but with attention mechanisms.
 
 #### 5.2.2. CNNtention on images of 45x90 size (resized)
-- This CNNtention model was built based on the non-attention CNN model's architecture but with attention mechanisms, reaching 97.15% test accuracy.  
+
+Due to very long training time, I decided to train that CNNtention model again but with images resized to 45x70 from 90x140 and reached 97.15% test accuracy.  
   
 ![description](Images/CNNtentionAccuracyCurve.jpg) ![description](Images/CNNtentionLossCurve.jpg)
 ![description](Images/CNNtentionConfusionMatrix.jpg)  
 
-- The CNNtention model classifies nearly all labels more effectively compared to the Non-attention CNN model above, though the CNNtention model still sometimes misclassifies 9 to 8. This may be due to the fact that the number of image 9 is smaller than the number of other images in the custom dataset (section 3).
+- This 45x70 CNNtention model classifies nearly all labels more effectively compared to the Non-attention CNN model (section 5.1), though this CNNtention model still sometimes misclassifies 9 to 8. This may be due to the fact that the number of image 9 is smaller than the number of other images in the custom dataset (section 3) and the fact that images are resized to 45x70, reducing images' information four times.
 
 ### 5.3. ResNet18 from scratch
 - The model reached 98.99% test accuracy.
