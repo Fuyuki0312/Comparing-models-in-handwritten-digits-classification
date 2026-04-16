@@ -65,10 +65,10 @@ Some heavy transformations (e.g., random rotation, large scaling) were avoided t
 
 ### 5.2. CNNtention
 
-#### 5.2.1. CNNtention on images of 90x140 size (original size)
+#### 5.2.1. CNNtention on images of size 90x140 (original size)
 - This CNNtention model was built based on the non-attention CNN model's architecture but with attention mechanisms.
 
-#### 5.2.2. CNNtention on images of 45x90 size (resized)
+#### 5.2.2. CNNtention on images of size 45x90 (resized)
 
 Due to very long training time, I decided to train that CNNtention model again but with images resized to 45x70 from 90x140 and reached 97.15% test accuracy.  
   
