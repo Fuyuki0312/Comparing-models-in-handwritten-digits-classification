@@ -97,7 +97,7 @@ Some heavy transformations (e.g., random rotation, large scaling) were avoided t
 - Among the two CNNtention models, although there were differences in image size, the final metrics of these models is quite similar. Reducing image size not only helps the CNNtention model to train much faster, but also improve the performance slightly. Even though reducing image size may prevent the 45x70 model to fully observe images, it accidentally prevents the model from "wandering" around unimportant areas in images.
 
 **Key Advantages of CNNtention compared to ResNet18 and non-attention CNN in this project:**  
-- **Significantly smaller** weight size (987 KB vs 131,169 KB)
+- **Significantly smaller** weight size (986 KB vs 131,169 KB)
 - **3% accuracy improvement** over baseline CNN
 - **Lower computational requirements on small-resized images** - suitable for low-end devices
 
