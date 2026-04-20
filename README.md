@@ -45,17 +45,9 @@ The dataset was manually inspected and cleaned to improve quality:
 Some heavy transformations (e.g., random rotation, large scaling) were avoided to preserve digit structure. However, some transformations are available in `train.py` in commentary form, meaning that they can be enabled by deleting sharp symbols "#" based-on your needs. For more detailed, you can take a further look at `train.py`.
 
 
-## 4. Demonstration
-- A demonstration of the CNNtention model (45x70) from scratch is produced at HuggingFace Space: https://huggingface.co/spaces/Fuyuki0312/CNNtention-in-handwritten-digit-classification
-- Or for the ResNet18 model: https://huggingface.co/spaces/Fuyuki0312/ResNet18-in-handwritten-digit-classification
-- The Space may need a few seconds to restart if inactive. 
-- Note: Input image's background color should be white by default.  
-![description](Images/ModelDemonstration.jpg)  
+## 4. Metrics
 
-
-## 5. Metrics
-
-### 5.1. Non-attention CNN model built from scratch
+### 4.1. Non-attention CNN model built from scratch
 - The model reached 96.05% test accuracy.  
 
 ![description](Images/CNNAccuracyCurve.jpg) ![description](Images/CNNLossCurve.jpg)
@@ -63,31 +55,31 @@ Some heavy transformations (e.g., random rotation, large scaling) were avoided t
 
 - The model sometimes confuses digits like 0, 3, 6, 8, and 9 due to similar rounded shapes and different handwritting styles.  
 
-### 5.2. CNNtention
+### 4.2. CNNtention
 
-#### 5.2.1. CNNtention on images of size 90x140 (original size)
+#### 4.2.1. CNNtention on images of size 90x140 (original size)
 - This CNNtention model was built based on the non-attention CNN model's architecture but with attention mechanisms, reaching 96.97% test accuracy.
 
 ![description](Images/90x140CNNtentionAccuracyCurve.jpg) ![description](Images/90x140CNNtentionLossCurve.jpg)
 ![description](Images/90x140CNNtentionConfusionMatrix.jpg)  
 
-#### 5.2.2. CNNtention on images of size 45x90 (resized)
+#### 4.2.2. CNNtention on images of size 45x90 (resized)
 
-- Due to very long training time (section 5.4), I decided to train that CNNtention model again but with images resized to 45x70 from 90x140 and reached 97.15% test accuracy.  
+- Due to very long training time (section 4.4), I decided to train that CNNtention model again but with images resized to 45x70 from 90x140 and reached 97.15% test accuracy.  
   
 ![description](Images/45x90CNNtentionAccuracyCurve.jpg) ![description](Images/45x90CNNtentionLossCurve.jpg)
 ![description](Images/45x90CNNtentionConfusionMatrix.jpg)  
 
-- The two CNNtention models classify nearly all labels more effectively compared to the Non-attention CNN model (section 5.1), though these CNNtention models still sometimes misclassify 9 to 8. This may be due to the fact that the number of image 9 is smaller than the number of other images in the custom dataset (section 3).
+- The two CNNtention models classify nearly all labels more effectively compared to the Non-attention CNN model (section 4.1), though these CNNtention models still sometimes misclassify 9 to 8. This may be due to the fact that the number of image 9 is smaller than the number of other images in the custom dataset (section 3).
 
-### 5.3. ResNet18 from scratch
+### 4.3. ResNet18 from scratch
 - The model reached 98.99% test accuracy.
 ![description](Images/ScratchResNetAccuracyCurve.jpg) ![description](Images/ScratchResNetLossCurve.jpg)
 ![description](Images/ScratchResNetConfusionMatrix.jpg)
  
 - While the ResNet18 model performed effectively on the dataset with reliable metrics, it may not necessarily be consistent to correctly predict real-world handwritten digits. Therefore, these metrics should be interpreted with caution.
 
-### 5.4. Comparison
+### 4.4. Comparison
 
 ![description](Images/ComparisonTable.jpg)
 
@@ -100,6 +92,14 @@ Some heavy transformations (e.g., random rotation, large scaling) were avoided t
 - **Significantly smaller** weight size (986 KB vs 131,169 KB)
 - **accuracy improvement** over baseline CNN
 - **Lower computational requirements on small-resized images** - suitable for low-end devices
+
+
+## 5. Demonstration
+- A demonstration of the CNNtention model (45x70) from scratch is produced at HuggingFace Space: https://huggingface.co/spaces/Fuyuki0312/CNNtention-in-handwritten-digit-classification
+- Or for the ResNet18 model: https://huggingface.co/spaces/Fuyuki0312/ResNet18-in-handwritten-digit-classification
+- The Space may need a few seconds to restart if inactive. 
+- Note: Input image's background color should be white by default.  
+![description](Images/ModelDemonstration.jpg)  
 
 
 ## 6. How to use the models
